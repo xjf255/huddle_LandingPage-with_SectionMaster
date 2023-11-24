@@ -13,6 +13,8 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 button {
@@ -22,14 +24,10 @@ button {
     -moz-box-shadow: 0px 2px 10px 0px rgb(0, 0, 0);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    font-size: 1.4em;
 }
 
 body {
@@ -38,11 +36,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--white);
 }
+img--desktop{
+    display: none;
+}
 
 header {
     width: 100%;
     padding: 20px;
-    /* background-color: red; */
 }
 
 .logo {
@@ -54,7 +54,6 @@ header {
 
 .logo>img {
     width: 140px;
-    /* background-color: rebeccapurple; */
 }
 
 .logo>button {
@@ -63,12 +62,12 @@ header {
     color: var(--Pink);
     border: 1px solid var(--Pink);
     border-radius: 20px;
-    /* background-color: aqua; */
 }
-
+.logo>button:hover{
+    opacity: .8;
+}
 .hero {
     height: 100vh;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -83,12 +82,9 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* background-color: royalblue; */
-
 }
 
 .hero__content p {
-    /* background-color: rebeccapurple; */
     line-height: 1.4rem;
     text-wrap: balance;
 }
@@ -96,11 +92,18 @@ header {
 .hero__content button {
     color: var(--white);
     background-color: var(--Pink);
-    width: 50%;
+    width: 60%;
+    max-width: 300px;
     padding: 16px 20px;
     border-radius: 30px;
+    font-weight: 700;
 }
-
+.hero__content button:hover{
+    background-color: var(--Light-Pink);
+}
+.hero__content > h1{
+    font-size: 1.6rem;
+}
 .hero__img {
     width: 100vw;
     height: 300px;
@@ -116,7 +119,6 @@ header {
 .score {
     width: 100vw;
     height: 60vh;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -127,7 +129,6 @@ header {
     width: auto;
     height: auto;
     text-align: center;
-    /* background-color: aqua; */
 }
 
 .score__values>h6 {
@@ -136,7 +137,6 @@ header {
 
 .score__values span {
     color: var(--Very-Pale);
-    /* text-align: center; */
     font-weight: 400;
 }
 
@@ -155,9 +155,11 @@ header {
     height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 80px;
     padding: 20px;
+    text-align: center;
 }
 
 .svg--desktop {
@@ -166,9 +168,11 @@ header {
 
 .sct__elem:nth-of-type(2) {
     background-color: var(--white);
-    justify-content: space-between;
 }
-
+.sct__txt > p{
+    text-wrap: balance;
+    margin-top: 20px;
+}
 .sct__img>img {
     width: 100%;
     height: auto;
@@ -177,7 +181,6 @@ header {
 
 .started {
     height: 80vh;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,12 +197,17 @@ header {
 
 .started button {
     width: 80%;
+    max-width: 300px;
     font-weight: 700;
     font-size: 15px;
     background-color: var(--Pink);
     color: var(--white);
     border-radius: 30px;
     padding: 20px;
+}
+
+.started button:hover{
+    background-color: var(--Light-Pink);
 }
 
 footer {
@@ -216,10 +224,10 @@ footer {
     height: 50%;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
+    justify-content: center;
     align-items: end;
-    /* position:relative;
-    padding-bottom: 60px; */
+    gap: 20px;
+    position: relative;
 }
 .footer__subscribe h4{
     width: 100%;
@@ -241,9 +249,10 @@ footer {
     font-weight: 700;
     font-size: 1em;
     color: var(--white);
-    /* position: absolute;
-    right: 0;
-    bottom: 0; */
+}
+
+.footer__subscribe button:hover{
+    background-color: var(--Light-Pink);
 }
 .footer__info{
     height: 50%;
@@ -251,6 +260,9 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     gap: 30px;
+}
+.footer__img p{
+    margin-top: 15px;
 }
 .footer__contact{
     display: flex;
@@ -267,5 +279,137 @@ footer {
     list-style: none;
     display: flex;
     gap: 20px;
-    font-size: 1.5rem;
+}
+.footer__icons i{
+    font-size: 1.6rem;
+}
+picture{
+    width: 100%;
+    display: block;
+    margin-bottom: -5px;
+}
+picture > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.error{
+    color: var(--Light-Red);
+    position: absolute;
+    top: 70%;
+}
+@media(width >= 601px) {
+    header{
+        padding: 50px;
+    }
+    .hero{
+        height: auto;
+        padding: 20px;
+        margin-top: 100px;
+    }
+    .hero__content{
+        height: 30%;
+        width: 400px;
+        justify-content: center;
+        gap: 30px;
+    }
+    .hero__content > h1{
+        width: 100vw;
+        font-size: 3rem;
+    }
+    .hero__img{
+        width: 80vw;
+        height: 70%;
+
+    }
+    .hero__img > img{
+
+        height: auto;
+        object-fit: none;
+        padding: 0;
+    }
+    .score{
+        height: 40vh;
+        flex-direction: row;
+    }
+    .score h6{
+        font-size: 6em;
+    }
+    .score__img{
+        width: 100%;
+        text-align: start;
+    }
+    .score__values span{
+        font-size: 1.2em;
+    }
+    .sct__elem{
+        height: 60vh;
+        flex-direction: row-reverse;
+        gap: 0;
+        padding: 50px;
+    }
+    .sct__txt{
+        width: 50vw;
+        padding: 0 60px;
+    }
+    .sct__txt h2{
+        font-size: 3rem;
+        text-align: start;
+    }
+    .sct__txt p{
+        text-align: justify;
+    }
+    .sct__img{
+        width: 50vw;
+    }
+    .sct__img img{
+        width: 80%;
+    }
+    .sct__elem:nth-of-type(2){
+        flex-direction: row;
+        height: 70vh;
+    }
+    .started{
+        height: 60vh    ;
+    }
+    .started h3{
+        font-size: 2rem;
+    }
+    footer{
+        height: 60vh;
+        flex-direction: row;
+        padding: 0 50px;
+        gap: 100px;
+    }
+    .footer__img p{
+        text-wrap: balance;
+    }
+    .footer__info{
+        width: 25%;
+
+    }
+    .footer__subscribe{
+        width: 40%;
+        align-items: start;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    .footer__subscribe h4{
+        font-size: 2em;
+    }
+    .footer__subscribe p{
+        width: 70%;
+    }
+    .footer__subscribe input{
+        width: 60%;
+    }
+    .footer__subscribe button{
+        width: 30%;
+        position: relative;
+        bottom: 24%;
+        left: 65%;
+    }
+    .footer__icons i{
+        font-size: 2rem;
+    }
 }
